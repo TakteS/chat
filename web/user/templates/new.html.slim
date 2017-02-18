@@ -1,0 +1,12 @@
+= form_for @changeset, user_path(@conn, :create), [method: :put], fn f ->
+  = text_input f, :username, required: true, placeholder: gettext("Username"), class: "form-control"
+  = error_tag f, :username
+  
+  br
+  
+  = password_input f, :password, required: true, placeholder: gettext("password"), class: "form-control"
+  = error_tag f, :password
+  
+  br
+  
+  = submit gettext("Sign up")

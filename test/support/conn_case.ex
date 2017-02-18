@@ -26,6 +26,7 @@ defmodule Chat.ConnCase do
       import Ecto.Query
 
       import Chat.Router.Helpers
+      import Chat.ConnCase, only: [render_template: 1]
 
       # The default endpoint for testing
       @endpoint Chat.Endpoint
@@ -41,4 +42,6 @@ defmodule Chat.ConnCase do
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
+
+  def render_template(conn), do: conn.private.phoenix_template
 end

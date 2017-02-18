@@ -1,5 +1,6 @@
 defmodule Chat.ErrorView do
   use Chat.Web, :view
+  use Phoenix.View, root: "web/tempates"
 
   def render("404.html", _assigns) do
     "Page not found"
