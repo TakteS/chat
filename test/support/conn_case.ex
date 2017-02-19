@@ -30,6 +30,15 @@ defmodule Chat.ConnCase do
 
       # The default endpoint for testing
       @endpoint Chat.Endpoint
+
+      def auth_conn(user),
+        do: build_conn() |> assign(:current_user, user)
+
+      def session_conn() do
+        build_conn()
+        |> bypass_through(Chat.Router, [:browser])
+        |> get("/")
+      end
     end
   end
 

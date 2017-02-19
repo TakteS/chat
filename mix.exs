@@ -39,7 +39,8 @@ defmodule Chat.Mixfile do
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:comeonin, "~> 3.0"},
-     {:phoenix_slime, "~> 0.8.0"}]
+     {:phoenix_slime, "~> 0.8.0"},
+     {:ex_machina, "~> 1.0", only: :test}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

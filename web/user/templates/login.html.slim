@@ -1,0 +1,6 @@
+= form_for @conn, user_path(@conn, :do_login), [as: :user, method: :post], fn f ->
+  = text_input f, :username, required: true, placeholder: gettext("Username"), class: "form-control"
+  br
+  = password_input f, :password, required: true, placeholder: gettext("password"), class: "form-control"
+  br
+  = submit gettext("Sign in")

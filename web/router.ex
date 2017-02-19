@@ -7,6 +7,7 @@ defmodule Chat.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug Chat.Plug.Auth, repo: Chat.Repo
   end
 
   pipeline :api do
@@ -20,6 +21,11 @@ defmodule Chat.Router do
 
     get "/register", UserController, :new
     put "/register", UserController, :create
+
+    get  "/login", UserController, :login
+    post "/login", UserController, :do_login
+
+    delete "/logout", UserController, :logout
   end
 
   # Other scopes may use custom stacks.

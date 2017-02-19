@@ -36,6 +36,11 @@ defmodule Chat.Web do
 
       import Chat.Router.Helpers
       import Chat.Gettext
+
+      def action(conn, _) do
+        apply(__MODULE__, action_name(conn),
+          [conn, conn.params, conn.assigns[:current_user]])
+      end
     end
   end
 
