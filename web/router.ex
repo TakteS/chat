@@ -26,6 +26,8 @@ defmodule Chat.Router do
     post "/login", UserController, :do_login
 
     delete "/logout", UserController, :logout
+
+    resources "/rooms", RoomController
   end
 
   # Other scopes may use custom stacks.

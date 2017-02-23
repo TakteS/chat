@@ -4,13 +4,14 @@ defmodule Chat.User.ValidatorTest do
   alias Chat.User.Validator
 
   describe "changeset/2" do
-    @reqired_fields [:username, :password, :hashed_password]
+    @required_fields [:username, :password, :hashed_password, :role]
 
     test "validate fields presence" do
       message   = {"can't be blank", [validation: :required]}
-      changeset = Validator.changeset(%User{}, %{})
+      # We need to do role: nil because role have the default value
+      changeset = Validator.changeset(%User{}, %{role: nil})
 
-      for field <- @reqired_fields, do: assert changeset.errors[field] == message
+      for field <- @required_fields, do: assert changeset.errors[field] == message
     end
 
     test "validate username length" do
@@ -38,6 +39,12 @@ defmodule Chat.User.ValidatorTest do
       message   = {"should be at least %{count} character(s)", [count: 8, validation: :length, min: 8]}
       changeset = Validator.changeset(%User{}, %{"password" => TestUtils.random_string(7)})
       assert changeset.errors[:password] == message
+    end
+
+    test "validate role inclusion" do
+      message   = {"is invalid", [validation: :inclusion]}
+      changeset = Validator.changeset(%User{}, %{"role" => "fake role"})
+      assert changeset.errors[:role] == message
     end
   end
 end

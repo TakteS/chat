@@ -5,5 +5,6 @@ defmodule Chat.User do
     field :username,        :string
     field :hashed_password, :string
     field :password,        :string, virtual: true
+    field :role,            :string, default: "user"
   end
 end

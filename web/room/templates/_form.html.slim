@@ -1,0 +1,7 @@
+= form_for @changeset, @action, fn f ->
+  = text_input f, :name, placeholder: gettext("Name"), required: true, class: "form-controll"
+  = error_tag f, :name
+  
+  br
+  
+  = submit gettext("Submit")

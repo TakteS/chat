@@ -1,0 +1,7 @@
+h4 = gettext("Chat rooms")
+hr
+br
+
+= for room <- @rooms do
+  = link room.name, to: room_path(@conn, :show, room.id)
+  hr

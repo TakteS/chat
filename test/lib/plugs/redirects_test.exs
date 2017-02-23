@@ -31,4 +31,18 @@ defmodule Chat.Plug.RedirectsTest do
       assert redirected_to(conn) == "/"
     end
   end
+
+  describe "redirect_unless_admin/2" do
+    test "do redirect whe user is not admin" do
+      user = insert(:user)
+      conn = auth_conn(user) |> Redirects.redirect_unless_admin([])
+      assert redirected_to(conn) == "/"
+    end
+
+    test "do not redirect when user is admin" do
+      user = insert(:user, role: "admin")
+      conn = auth_conn(user) |> get("/") |> Redirects.redirect_unless_admin([])
+      assert html_response(conn, 200)
+    end
+  end
 end

@@ -1,0 +1,5 @@
+h4 = gettext("Edit room")
+hr
+br
+
+= render "_form.html", conn: @conn, changeset: @changeset, action: room_path(@conn, :update, @room.id) 

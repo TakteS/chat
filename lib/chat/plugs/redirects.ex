@@ -35,4 +35,19 @@ defmodule Chat.Plug.Redirects do
       conn
     end
   end
+
+  @doc """
+  Redirect users to root path when he is not admin.
+
+  ### Example:
+      Redirects.redirect_unless_admin(conn, [])
+  """
+  @spec redirect_unless_admin(Plug.Conn.t, keyword) :: Plug.Conn.t
+  def redirect_unless_admin(conn, _params) do
+    if conn.assigns.current_user.role == "admin" do
+      conn
+    else
+      redirect(conn, to: "/") |> halt()
+    end
+  end
 end
