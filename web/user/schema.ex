@@ -6,6 +6,6 @@ defmodule Chat.User do
     field :hashed_password, :string
     field :password,        :string, virtual: true
     field :role,            :string, default: "user"
-    field :token,           Ecto.UUID
+    field :token,           :string
   end
 end

@@ -15,4 +15,12 @@ defmodule Chat.Factory do
       name: sequence(:name, &"room-#{&1}")
     }
   end
+
+  def message_factory() do
+    %Chat.Message{
+      body: sequence(:body, &"message-#{&1}"),
+      user: build(:user),
+      room: build(:room)
+    }
+  end
 end
