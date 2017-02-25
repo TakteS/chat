@@ -14,7 +14,7 @@
   <body>
     <div class="container">
       <header class="header">
-        
+
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
@@ -25,6 +25,13 @@
       </main>
 
     </div> <!-- /container -->
+    <%= if @conn.assigns[:current_user] do %>
+      <script>
+        window.chat = {
+          token: "<%= @conn.assigns.current_user.token %>"
+        }
+      </script>
+    <% end %>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

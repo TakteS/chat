@@ -5,7 +5,7 @@ defmodule Chat.Plug.Auth do
 
   import Plug.Conn
 
-  def init(opts), do: Keyword.fetch(opts, :repo)
+  def init(opts), do: Keyword.fetch!(opts, :repo)
 
   def call(conn, repo) do
     user_id = get_session(conn, :user_id)

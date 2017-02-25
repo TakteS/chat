@@ -1,7 +1,7 @@
 defmodule Chat.Endpoint do
   use Phoenix.Endpoint, otp_app: :chat
 
-  socket "/socket", Chat.UserSocket
+  socket "/socket", Chat.ChatSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
