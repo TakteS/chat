@@ -5,7 +5,8 @@ defmodule Chat.Factory do
     %Chat.User{
       username:        sequence(:username, &"user#{&1}"),
       hashed_password: Comeonin.Bcrypt.hashpwsalt("password"),
-      role:            "user"
+      role:            "user",
+      token:           Ecto.UUID.generate
     }
   end
 

@@ -1,7 +1,7 @@
 defmodule Chat.User.Validator do
   import Ecto.Changeset
 
-  @required_fields [:username, :password, :hashed_password, :role]
+  @required_fields [:username, :password, :hashed_password, :role, :token]
   @roles ~w(user admin)
 
   @spec changeset(Chat.User.t, map) :: Ecto.Changeset.t

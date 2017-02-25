@@ -4,7 +4,7 @@ defmodule Chat.User.ValidatorTest do
   alias Chat.User.Validator
 
   describe "changeset/2" do
-    @required_fields [:username, :password, :hashed_password, :role]
+    @required_fields [:username, :password, :hashed_password, :role, :token]
 
     test "validate fields presence" do
       message   = {"can't be blank", [validation: :required]}
@@ -21,8 +21,15 @@ defmodule Chat.User.ValidatorTest do
     end
 
     test "validate username uniqueness" do
-      message   = {"has already been taken", []}
-      params    = %{"username" => "username", "password" => "password", "hashed_password" => "password"}
+      message = {"has already been taken", []}
+
+      params = %{
+        "username"        => "username",
+        "password"        => "password",
+        "hashed_password" => "password",
+        "token"           => Ecto.UUID.generate
+      }
+      
       changeset = Validator.changeset(%User{}, params)
       assert {:ok, _} = Repo.insert(changeset)
 

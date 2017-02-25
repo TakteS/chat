@@ -21,7 +21,10 @@ defmodule Chat.User.UseCase.Register do
   """
   @spec run(Plug.Conn.t, map) :: tuple
   def run(conn, params) do
-    params = cast_hashed_password(params)
+    params =
+      params
+      |> cast_hashed_password()
+      |> cast_token()
 
     Validator.changeset(%User{}, params)
     |> Repo.insert
@@ -31,6 +34,8 @@ defmodule Chat.User.UseCase.Register do
   defp cast_hashed_password(%{"password" => password} = params) when not(password in ["", nil]),
     do: Map.put(params, "hashed_password", Comeonin.Bcrypt.hashpwsalt(password))
   defp cast_hashed_password(params), do: params
+
+  defp cast_token(params), do: Map.put(params, "token", Ecto.UUID.generate)
 
   defp maybe_authenticate({:ok, user}, conn), do: {:ok, Auth.login(conn, user), user}
   defp maybe_authenticate(error, _),          do: error

@@ -16,6 +16,7 @@ defmodule Chat.User.UseCase.RegisterTest do
 
       assert {:ok, conn, user} = Register.run(ctx.conn, params)
       assert user.username == params["username"]
+      assert {:ok, _} = Ecto.UUID.cast(user.token)
       assert Comeonin.Bcrypt.checkpw(params["password"], user.hashed_password)
 
       assert conn.assigns.current_user.id == user.id
