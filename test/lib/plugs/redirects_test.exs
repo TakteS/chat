@@ -22,7 +22,7 @@ defmodule Chat.Plug.RedirectsTest do
 
   describe "redirect_if_authenticated/2" do
     test "do not redirect when user is not authenticated" do
-      conn = build_conn() |> get("/") |> Redirects.redirect_if_authenticated([])
+      conn = build_conn() |> get("/login") |> Redirects.redirect_if_authenticated([])
       assert html_response(conn, 200)
     end
 

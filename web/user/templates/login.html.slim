@@ -1,6 +1,10 @@
-= form_for @conn, user_path(@conn, :do_login), [as: :user, method: :post], fn f ->
-  = text_input f, :username, required: true, placeholder: gettext("Username"), class: "form-control"
-  br
-  = password_input f, :password, required: true, placeholder: gettext("password"), class: "form-control"
-  br
-  = submit gettext("Sign in")
+.row
+  .col-lg-12
+    h1 = gettext("Sign in")
+    .well.well-lg
+      = form_for @conn, user_path(@conn, :do_login), [as: :user, method: :post], fn f ->
+        = text_input f, :username, required: true, placeholder: gettext("Username"), class: "form-control"
+        br
+        = password_input f, :password, required: true, placeholder: gettext("Password"), class: "form-control"
+        br
+        = submit gettext("Sign in"), class: "btn btn-primary"

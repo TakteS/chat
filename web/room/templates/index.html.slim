@@ -1,7 +1,12 @@
-h4 = gettext("Chat rooms")
-hr
-br
-
-= for room <- @rooms do
-  = link room.name, to: room_path(@conn, :show, room.id)
-  hr
+.row
+  .col-lg-12
+    h1 = gettext("Chat rooms")
+    = for room <- @rooms do
+      .well 
+        = link room.name, to: room_path(@conn, :show, room.id)
+        br
+        = if user_is_admin(@conn) do
+          hr
+          ul.list-inline 
+            li = link gettext("Edit"), to: room_path(@conn, :edit, room.id), class: "btn btn-default btn-sm"
+            li = link gettext("Delete"), to: room_path(@conn, :delete, room.id), method: :delete, class: "btn btn-default btn-sm", data: [confirm: gettext("Are you sure?")]

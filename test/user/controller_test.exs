@@ -112,10 +112,10 @@ defmodule Chat.UserControllerTest do
     end
   end
 
-  describe "DELETE /logout" do
+  describe "GET /logout" do
     test "redirect to root path", ctx do
       conn = auth_conn(ctx.user)
-      conn = delete(conn, user_path(conn, :logout))
+      conn = get(conn, user_path(conn, :logout))
       assert html_response(conn, 302)
       assert redirected_to(conn) == user_path(conn, :login)
     end

@@ -14,8 +14,8 @@ defmodule Chat.RoomController do
   end
 
   def show(conn, %{"id" => id}, _current_user) do
-    room = Repo.get!(Room, id)
-    render conn, "show.html", room: room
+    room = Repo.get!(Room, id) |> Repo.preload([:messages])
+    render conn, "show.html", room: room, messages: Repo.preload(room.messages, :user)
   end
 
   def new(conn, _params, _current_user) do

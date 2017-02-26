@@ -1,5 +1,5 @@
-h4 = gettext("Create room")
-hr
-br
-
-= render "_form.html", conn: @conn, changeset: @changeset, action: room_path(@conn, :create)
+.row
+  .coll-lg-12
+    h1 = gettext("Create a room")
+    .well.well-lg
+      = render "_form.html", conn: @conn, changeset: @changeset, action: room_path(@conn, :create)

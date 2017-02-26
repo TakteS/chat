@@ -1,5 +1,5 @@
-h4 = gettext("Edit room")
-hr
-br
-
-= render "_form.html", conn: @conn, changeset: @changeset, action: room_path(@conn, :update, @room.id) 
+.row
+  .coll-lg-12
+    h1 = gettext("Edit room")
+    .well.well-lg
+      = render "_form.html", conn: @conn, changeset: @changeset, action: room_path(@conn, :update, @room.id) 

@@ -17,7 +17,7 @@ defmodule Chat.Router do
   scope "/", Chat do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", RoomController, :index
 
     get "/register", UserController, :new
     put "/register", UserController, :create
@@ -25,7 +25,7 @@ defmodule Chat.Router do
     get  "/login", UserController, :login
     post "/login", UserController, :do_login
 
-    delete "/logout", UserController, :logout
+    get "/logout", UserController, :logout
 
     resources "/rooms", RoomController
   end

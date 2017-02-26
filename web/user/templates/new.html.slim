@@ -1,12 +1,16 @@
-= form_for @changeset, user_path(@conn, :create), [method: :put], fn f ->
-  = text_input f, :username, required: true, placeholder: gettext("Username"), class: "form-control"
-  = error_tag f, :username
-  
-  br
-  
-  = password_input f, :password, required: true, placeholder: gettext("password"), class: "form-control"
-  = error_tag f, :password
-  
-  br
-  
-  = submit gettext("Sign up")
+.row
+  .col-lg-12
+    h1 = gettext("Sign up")
+    .well.well-lg
+      = form_for @changeset, user_path(@conn, :create), [method: :put], fn f ->
+        = text_input f, :username, required: true, placeholder: gettext("Username"), class: "form-control"
+        = error_tag f, :username
+
+        br
+        
+        = password_input f, :password, required: true, placeholder: gettext("Password"), class: "form-control"
+        = error_tag f, :password
+        
+        br
+        
+        = submit gettext("Sign up"), class: "btn btn-primary"

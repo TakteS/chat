@@ -1,1 +1,23 @@
-h4 = @room.name
+.row
+  .col-lg-12
+    h1 = @room.name
+
+    .well.well-lg
+      #messages
+        = for message <- @messages do
+          div
+            b = message.user.username 
+            |  say: 
+            = message.body
+            hr
+
+    .well.well-lg
+      input#message-input class="form-control"
+      br
+      button#send-button class="btn btn-primary"
+        = gettext("Send")
+
+javascript:
+  window.room = {
+    id: "<%= @room.id %>"
+  }
