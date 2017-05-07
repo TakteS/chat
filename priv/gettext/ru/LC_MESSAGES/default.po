@@ -47,7 +47,7 @@ msgstr "Введите сообщение"
 
 #: web/room/templates/_form.html.slim:1
 msgid "Name"
-msgstr "Имя"
+msgstr "Название"
 
 #: web/room/templates/show.html.slim:1
 msgid "Online users"
@@ -68,16 +68,16 @@ msgstr "Отправить"
 #: web/templates/layout/app.html.eex:44 web/user/templates/login.html.slim:1
 #: web/user/templates/login.html.slim:1
 msgid "Sign in"
-msgstr "Войти"
+msgstr "Авторизация"
 
 #: web/templates/layout/app.html.eex:42
 msgid "Sign out"
-msgstr "Выйти"
+msgstr "Выход"
 
 #: web/templates/layout/app.html.eex:45 web/user/templates/new.html.slim:1
 #: web/user/templates/new.html.slim:1
 msgid "Sign up"
-msgstr "Зарегистрироваться"
+msgstr "Регистрация"
 
 #: web/room/templates/_form.html.slim:1
 msgid "Submit"
