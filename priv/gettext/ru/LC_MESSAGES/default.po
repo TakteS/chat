@@ -1,0 +1,104 @@
+## `msgid`s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove `msgid`s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use `mix gettext.extract --merge` or `mix gettext.merge`
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: ru\n"
+
+#: web/room/templates/index.html.slim:1
+msgid "user online"
+msgid_plural "users online"
+msgstr[0] "пользователь онлайн"
+msgstr[1] "пользователя онлайн"
+msgstr[2] "пользователей онлайн"
+
+#: web/room/templates/index.html.slim:1
+msgid "Are you sure?"
+msgstr "Вы уверены?"
+
+#: web/room/templates/index.html.slim:1
+msgid "Chat rooms"
+msgstr "Комнаты"
+
+#: web/room/templates/new.html.slim:1 web/templates/layout/app.html.eex:37
+msgid "Create a room"
+msgstr "Создать комнату"
+
+#: web/room/templates/index.html.slim:1
+msgid "Delete"
+msgstr "Удалить"
+
+#: web/room/templates/index.html.slim:1
+msgid "Edit"
+msgstr "Редактировать"
+
+#: web/room/templates/edit.html.slim:1
+msgid "Edit room"
+msgstr "Редактирование комнаты"
+
+#: web/room/templates/show.html.slim:1
+msgid "Enter message"
+msgstr "Введите сообщение"
+
+#: web/room/templates/_form.html.slim:1
+msgid "Name"
+msgstr "Имя"
+
+#: web/room/templates/show.html.slim:1
+msgid "Online users"
+msgstr "Пользователи онлайн"
+
+#: web/user/templates/login.html.slim:1 web/user/templates/new.html.slim:1
+msgid "Password"
+msgstr "Пароль"
+
+#: web/templates/layout/app.html.eex:35
+msgid "Rooms"
+msgstr "Комнаты"
+
+#: web/room/templates/show.html.slim:1
+msgid "Send"
+msgstr "Отправить"
+
+#: web/templates/layout/app.html.eex:44 web/user/templates/login.html.slim:1
+#: web/user/templates/login.html.slim:1
+msgid "Sign in"
+msgstr "Войти"
+
+#: web/templates/layout/app.html.eex:42
+msgid "Sign out"
+msgstr "Выйти"
+
+#: web/templates/layout/app.html.eex:45 web/user/templates/new.html.slim:1
+#: web/user/templates/new.html.slim:1
+msgid "Sign up"
+msgstr "Зарегистрироваться"
+
+#: web/room/templates/_form.html.slim:1
+msgid "Submit"
+msgstr "Отправить"
+
+#: web/user/templates/login.html.slim:1 web/user/templates/new.html.slim:1
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: web/room/templates/show.html.slim:3 web/room/view.ex:35
+msgid "You say"
+msgstr "Вы сказали"
+
+#: web/room/templates/show.html.slim:4 web/room/view.ex:38
+msgid "say"
+msgstr "сказал"
+
+#: web/room/templates/show.html.slim:5
+msgid "joined to the room"
+msgstr "вошел в комнату"
+
+#: web/room/templates/show.html.slim:6
+msgid "User"
+msgstr "Пользователь"

@@ -8,6 +8,7 @@ defmodule Chat.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug Chat.Plug.Auth, repo: Chat.Repo
+    plug Chat.Plug.SetLocale
   end
 
   pipeline :api do
@@ -18,6 +19,8 @@ defmodule Chat.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", RoomController, :index
+
+    get "/set-locale", PageController, :set_locale
 
     get "/register", UserController, :new
     put "/register", UserController, :create

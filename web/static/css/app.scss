@@ -4,3 +4,144 @@ $icon-font-path: "/fonts/";
 body {
   padding-top: 75px;
 }
+
+.navbar-brand {
+  padding-top: 7px;
+}
+
+.navbar-header {
+  color: #000;
+}
+
+.btn-primary {
+  background-color: #c64a1d;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background-color: #bf2105 !important;
+}
+
+.btn-default {
+  border-color: #bf2105;
+  background-color: #fff;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active {
+  background-color: #fff !important;
+  border-color: #f47742 !important;
+}
+
+.well {
+  background-color: #fff;
+  border-color: #f47742;
+}
+
+.panel {
+  background-color: #fff;
+  border-color: #f47742;
+}
+
+.panel .panel-heading {
+  background-color: #f47742;
+  color: #fff;
+}
+
+hr {
+  border-color: #f47742;
+  border-style: dashed;
+}
+
+a {
+  color: #f47742;
+}
+
+a:focus, a:hover, a:active {
+  color: #bf2105;
+}
+
+.own-message {
+  color: #42a54d;
+}
+
+.message {
+  color: #45704b;
+}
+
+.system-message {
+  font-style: italic;
+}
+
+.messages {
+  overflow-y: auto;
+  max-width: 1500px;
+  max-height: 300px;
+}
+
+$bgDefault      : #ffffff;
+$bgHighlight    : #ee6b3c;
+$colDefault     : #bd365a;
+$colHighlight   : #d22500;
+$dropDown       : true;
+.navbar-default {
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHighlight; }}
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+      > a {
+        color: $colDefault;
+        &:hover,  &:focus {
+          color: $colHighlight; }}
+      @if $dropDown {
+        > .dropdown-menu {
+          background-color: $bgDefault;
+          > li {
+            > a {
+              color: $colDefault;
+              &:hover,  &:focus {
+                color: $colHighlight;
+                background-color: $bgHighlight; }}
+            > .divider {
+              background-color: $bgHighlight;}}}}}
+    @if $dropDown {
+      .open .dropdown-menu > .active {
+        > a, > a:hover, > a:focus {
+          color: $colHighlight;
+          background-color: $bgHighlight; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+}

@@ -1,0 +1,103 @@
+## `msgid`s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove `msgid`s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use `mix gettext.extract --merge` or `mix gettext.merge`
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: en\n"
+
+#: web/room/templates/index.html.slim:1
+msgid "user online"
+msgid_plural "users online"
+msgstr[0] ""
+msgstr[1] ""
+
+#: web/room/templates/index.html.slim:1
+msgid "Are you sure?"
+msgstr ""
+
+#: web/room/templates/index.html.slim:1
+msgid "Chat rooms"
+msgstr ""
+
+#: web/room/templates/new.html.slim:1 web/templates/layout/app.html.eex:37
+msgid "Create a room"
+msgstr ""
+
+#: web/room/templates/index.html.slim:1
+msgid "Delete"
+msgstr ""
+
+#: web/room/templates/index.html.slim:1
+msgid "Edit"
+msgstr ""
+
+#: web/room/templates/edit.html.slim:1
+msgid "Edit room"
+msgstr ""
+
+#: web/room/templates/show.html.slim:1
+msgid "Enter message"
+msgstr ""
+
+#: web/room/templates/_form.html.slim:1
+msgid "Name"
+msgstr ""
+
+#: web/room/templates/show.html.slim:1
+msgid "Online users"
+msgstr ""
+
+#: web/user/templates/login.html.slim:1 web/user/templates/new.html.slim:1
+msgid "Password"
+msgstr ""
+
+#: web/templates/layout/app.html.eex:35
+msgid "Rooms"
+msgstr ""
+
+#: web/room/templates/show.html.slim:1
+msgid "Send"
+msgstr ""
+
+#: web/templates/layout/app.html.eex:44 web/user/templates/login.html.slim:1
+#: web/user/templates/login.html.slim:1
+msgid "Sign in"
+msgstr ""
+
+#: web/templates/layout/app.html.eex:42
+msgid "Sign out"
+msgstr ""
+
+#: web/templates/layout/app.html.eex:45 web/user/templates/new.html.slim:1
+#: web/user/templates/new.html.slim:1
+msgid "Sign up"
+msgstr ""
+
+#: web/room/templates/_form.html.slim:1
+msgid "Submit"
+msgstr ""
+
+#: web/user/templates/login.html.slim:1 web/user/templates/new.html.slim:1
+msgid "Username"
+msgstr ""
+
+#: web/room/templates/show.html.slim:3 web/room/view.ex:35
+msgid "You say"
+msgstr ""
+
+#: web/room/templates/show.html.slim:4 web/room/view.ex:38
+msgid "say"
+msgstr ""
+
+#: web/room/templates/show.html.slim:5
+msgid "joined to the room"
+msgstr ""
+
+#: web/room/templates/show.html.slim:6
+msgid "User"
+msgstr ""

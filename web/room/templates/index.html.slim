@@ -5,6 +5,10 @@
       .well 
         = link room.name, to: room_path(@conn, :show, room.id)
         br
+        = online_count(room)
+        |  
+        = ngettext("user online", "users online", online_count(room))
+        br
         = if user_is_admin(@conn) do
           hr
           ul.list-inline 
