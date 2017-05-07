@@ -53,7 +53,7 @@ export default class View extends MainView {
 
       else {
         console.dir(message)
-        message.innerHTML = `<div class="message"><b>${messageText} ${window.room.say}: </b>${message}</div><hr>`
+        message.innerHTML = `<div class="message"><b>${e.username} ${window.room.say}: </b>${messageText}</div><hr>`
         messages.appendChild(message)
       }
     })
